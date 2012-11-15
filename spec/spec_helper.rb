@@ -23,7 +23,7 @@ RSpec.configure do |config|
 end
 
 def setup_db
-  puts 'Setting up the database...'
+  puts "\nSetting up the database...\n"
   
   ActiveRecord::Base.establish_connection(:adapter => "sqlite3", :database => ":memory:")
   
@@ -39,7 +39,7 @@ def setup_db
 end
 
 def teardown_db
-  puts 'Tearing down the database...'
+  puts "\nTearing down the database...\n"
   
   ActiveRecord::Base.connection.tables.each do |table|
     ActiveRecord::Base.connection.drop_table(table)
