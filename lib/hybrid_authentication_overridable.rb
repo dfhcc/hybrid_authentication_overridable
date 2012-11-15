@@ -1,4 +1,7 @@
-require "hybrid_authentication_overridable/version"
+require 'devise'
+require 'devise_ldap_authenticatable'
+
+require 'hybrid_authentication_overridable/version'
 
 module HybridAuthenticationOverridable
   extend ActiveSupport::Concern
