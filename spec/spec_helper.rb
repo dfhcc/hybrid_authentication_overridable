@@ -47,7 +47,7 @@ def teardown_db
 end
 
 class User < ActiveRecord::Base
-  devise :hybrid_authentication_overridable
+  devise :database_authenticatable, :hybrid_authentication_overridable
   
   attr_accessor :username, :email, :password, :password_confirmation
 end
