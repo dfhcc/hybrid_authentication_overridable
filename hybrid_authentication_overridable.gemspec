@@ -18,7 +18,9 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   
   gem.add_development_dependency 'rspec-rails', '~> 2.12.0'
+  gem.add_development_dependency 'factory_girl_rails', '~> 4.1.0'
   gem.add_development_dependency 'rails', '~> 3.2.8'
+  gem.add_development_dependency 'database_cleaner', '~> 0.9.1'
   gem.add_development_dependency 'debugger'
   
   gem.add_dependency 'devise', '~> 2.1.2'
