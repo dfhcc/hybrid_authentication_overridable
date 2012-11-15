@@ -46,7 +46,7 @@ This library depends on:
       
 ## TODOs
 
-- Write spec tests
+- Write better spec tests
 
 ## Contributing
 
