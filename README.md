@@ -7,6 +7,24 @@ This gem provides overrides for Devise in order to get LDAP and Database Authent
 ## Usage
 
 - Install the gem.
+- Add Devise initialize
+
+      ```
+      rails g devise:install
+      ```
+      
+- Add Devise User Model
+
+      ```
+      rails g devise User
+      ```
+      
+- Add extra fields (customize the User to your needs) and then migrate
+
+      ```
+      rake db:migrate
+      ```
+
 - In your User model 
 
       ```
