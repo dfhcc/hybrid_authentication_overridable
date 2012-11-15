@@ -1,24 +1,31 @@
 # HybridAuthenticationOverridable
 
-TODO: Write a gem description
+Devise Hybrid Authentication
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'hybrid_authentication_overridable'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install hybrid_authentication_overridable
+This gem provides overrides for Devise in order to get LDAP and Database Authentication to work nicely with each other.
 
 ## Usage
 
-TODO: Write usage instructions here
+- Install the gem.
+- In your User model 
+
+      ```
+      class User < ActiveRecord::Base
+        devise :ldap_authenticatable, :database_authenticatable, :rememberable, :trackable, :ldap_database_overridable
+        
+        attr_accessible :username, :email, :password, :password_confirmation, :remember_me
+      end
+      ```
+      
+- In the Devise initializer add:
+
+      ```
+      config.warden do |manager|
+        manager.default_strategies(:scope => :user).unshift :ldap_authenticatable
+      end
+      ```
+      
+
 
 ## Contributing
 
