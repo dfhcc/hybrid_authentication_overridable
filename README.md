@@ -38,27 +38,14 @@ This library depends on:
       ```
 
 - Configure config/ldap.yml
-- Update the User model 
+- Run the hybrid_authentication_overridable installer
 
       ```
-      class User < ActiveRecord::Base
-        devise :ldap_authenticatable, :database_authenticatable, :rememberable, :trackable, :hybrid_authentication_overridable
-        
-        attr_accessible :username, :email, :password, :password_confirmation, :remember_me
-      end
-      ```
-      
-- In the Devise initializer add:
-
-      ```
-      config.warden do |manager|
-        manager.default_strategies(:scope => :user).unshift :ldap_authenticatable
-      end
+      rails g hybrid_authentication_overridable:install
       ```
       
 ## TODOs
 
-- Write generator code to handle the last two steps mentioned in Usage
 - Write spec tests
 
 ## Contributing
