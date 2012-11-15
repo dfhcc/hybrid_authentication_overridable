@@ -21,9 +21,9 @@ module HybridAuthenticationOverridable
     
     def devise_authentication_fallback
       settings = <<-eof
-    config.warden do |manager|
-      manager.default_strategies(:scope => :user).unshift :ldap_authenticatable
-    end
+  config.warden do |manager|
+    manager.default_strategies(:scope => :user).unshift :ldap_authenticatable
+  end
       eof
       
       settings
