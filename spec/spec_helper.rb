@@ -1,8 +1,12 @@
 ENV['RAILS_ENV'] = 'test'
 
+require 'sqlite3'
 require 'active_record'
 require 'rspec'
 require 'shoulda'
+
+require 'devise'
+require 'devise_ldap_authenticatable'
 
 require File.expand_path('../lib/hybrid_authentication_overridable', File.dirname(__FILE__))
 
@@ -19,7 +23,7 @@ RSpec.configure do |config|
 end
 
 def setup_db
-  ActiveRecord::Base.establish_connection(:adapter => "sqlite3", :dbfile => ":memory:")
+  ActiveRecord::Base.establish_connection(:adapter => "sqlite3", :database => ":memory:")
   
   ActiveRecord::Schema.define(:version => 1) do
     create_table(:users) do |t|
@@ -42,7 +46,7 @@ def teardown_db
 end
 
 class User < ActiveRecord::Base
-  devise :ldap_authentication, :database_authentication, :hybrid_authentication_overridable
+  devise :hybrid_authentication_overridable
   
   attr_accessor :username, :email, :password, :password_confirmation
 end

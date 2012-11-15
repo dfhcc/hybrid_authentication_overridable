@@ -17,6 +17,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
   
+  gem.add_development_dependency 'sqlite3'
   gem.add_development_dependency 'activerecord', '~> 3.2.8'
   gem.add_development_dependency 'rspec-rails', '~> 2.12.0'
   gem.add_development_dependency 'shoulda', '~> 3.0.1'
