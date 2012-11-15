@@ -31,7 +31,7 @@ This gem provides overrides for Devise in order to get LDAP and Database Authent
       rails g devise_ldap_authenticatable:install
       ```
 
-- Configure the config.yml
+- Configure config/ldap.yml
 - Update the User model 
 
       ```
