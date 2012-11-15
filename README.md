@@ -56,7 +56,10 @@ This library depends on:
       end
       ```
       
+## TODOs
 
+- Write generator code to handle the last two steps mentioned in Usage
+- Write spec tests
 
 ## Contributing
 
