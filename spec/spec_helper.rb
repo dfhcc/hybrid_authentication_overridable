@@ -23,6 +23,8 @@ RSpec.configure do |config|
 end
 
 def setup_db
+  puts 'Setting up the database...'
+  
   ActiveRecord::Base.establish_connection(:adapter => "sqlite3", :database => ":memory:")
   
   ActiveRecord::Schema.define(:version => 1) do
@@ -33,13 +35,12 @@ def setup_db
 
       t.timestamps
     end
-
-    add_index :users, :username, :unique => true
-    add_index :users, :email,    :unique => true
   end
 end
 
 def teardown_db
+  puts 'Tearing down the database...'
+  
   ActiveRecord::Base.connection.tables.each do |table|
     ActiveRecord::Base.connection.drop_table(table)
   end
