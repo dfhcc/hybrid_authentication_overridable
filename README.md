@@ -24,8 +24,15 @@ This gem provides overrides for Devise in order to get LDAP and Database Authent
       ```
       rake db:migrate
       ```
+      
+- Add the Devise LDAP configurations
 
-- In your User model 
+      ```
+      rails g devise_ldap_authenticatable:install
+      ```
+
+- Configure the config.yml
+- Update the User model 
 
       ```
       class User < ActiveRecord::Base
