@@ -5,6 +5,8 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'factory_girl'
 
+require File.expand_path('../../lib/hybrid_authentication_overridable', File.dirname(__FILE__))
+
 Dir[File.expand_path("support/**/*.rb", File.dirname(__FILE__))].each {|f| require f}
 
 RSpec.configure do |config|
