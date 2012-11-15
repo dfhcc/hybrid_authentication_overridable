@@ -4,6 +4,11 @@ Devise Hybrid Authentication
 
 This gem provides overrides for Devise in order to get LDAP and Database Authentication to work nicely with each other.
 
+This library depends on:
+
+[Devise](https://github.com/plataformatec/devise)
+[Devise LDAP Authenticatable](https://github.com/cschiewek/devise_ldap_authenticatable)
+
 ## Usage
 
 - Install the gem.
