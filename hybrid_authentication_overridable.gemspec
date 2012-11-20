@@ -23,6 +23,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'shoulda', '~> 3.0.1'
   gem.add_development_dependency 'debugger'
   
-  gem.add_dependency 'devise', '~> 1.1.2'
-  gem.add_dependency 'devise_ldap_authenticatable', '~> 0.4.6'
+  gem.add_dependency 'devise', '~> 2.1.2'
+  gem.add_dependency 'devise_ldap_authenticatable', '~> 0.6.1'
 end
